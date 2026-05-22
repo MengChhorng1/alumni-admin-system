@@ -6,6 +6,7 @@ import { ProtectedRoute } from './ProtectedRoute.jsx';
 import { PageLoader } from '../../components/common/PageLoader.jsx';
 import { CrudPage } from '../../features/crud/CrudPage.jsx';
 import { entityConfigs } from '../../features/crud/entityConfigs.js';
+import { HashRouter } from 'react-router-dom';
 
 const DashboardPage = lazy(() => import('../../features/dashboard/DashboardPage.jsx'));
 const LoginPage = lazy(() => import('../../features/auth/LoginPage.jsx'));
