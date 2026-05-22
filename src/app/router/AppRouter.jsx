@@ -18,7 +18,7 @@ const ReportsPage = lazy(() => import('../../features/reports/ReportsPage.jsx'))
 
 export function AppRouter() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Suspense fallback={<PageLoader />}>
         <Routes>
           <Route path="/" element={<Navigate to="/app/dashboard" replace />} />
@@ -41,6 +41,6 @@ export function AppRouter() {
           <Route path="*" element={<Navigate to="/app/dashboard" replace />} />
         </Routes>
       </Suspense>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
