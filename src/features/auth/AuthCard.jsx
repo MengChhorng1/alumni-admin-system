@@ -1,2 +1,28 @@
-import { Link } from 'react-router-dom';
-export function AuthCard({ title, subtitle, children, footerText, footerLink, footerLinkText }) { return <section className="glass-card w-full max-w-md rounded-[2rem] p-8 shadow-2xl shadow-black/30"><div className="mb-7 text-center"><div className="mx-auto mb-4 grid h-14 w-14 place-items-center rounded-2xl bg-indigo-500 font-black">AP</div><h1 className="text-2xl font-bold">{title}</h1><p className="mt-2 text-sm text-slate-300">{subtitle}</p></div>{children}<p className="mt-6 text-center text-sm text-slate-300">{footerText} <Link className="font-semibold text-cyan-300" to={footerLink}>{footerLinkText}</Link></p></section> }
+import { Link } from "react-router-dom";
+export function AuthCard({
+  title,
+  subtitle,
+  children,
+  footerText,
+  footerLink,
+  footerLinkText,
+}) {
+  return (
+    <section className="glass-card w-full max-w-md rounded-[2rem] p-8 shadow-2xl shadow-black/30">
+      <div className="mb-7 text-center">
+        <div className="mx-auto mb-4 grid h-14 w-14 place-items-center rounded-2xl bg-indigo-500 font-black">
+          AP
+        </div>
+        <h1 className="text-2xl font-bold">{title}</h1>
+        <p className="mt-2 text-sm text-slate-300">{subtitle}</p>
+      </div>
+      {children}
+      <p className="mt-6 text-center text-sm text-slate-300">
+        {footerText}{" "}
+        <Link className="font-semibold text-cyan-300" to={footerLink}>
+          {footerLinkText}
+        </Link>
+      </p>
+    </section>
+  );
+}

@@ -1,20 +1,30 @@
-import { lazy, Suspense } from 'react';
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
-import { AdminLayout } from '../../layouts/AdminLayout.jsx';
-import { AuthLayout } from '../../layouts/AuthLayout.jsx';
-import { ProtectedRoute } from './ProtectedRoute.jsx';
-import { PageLoader } from '../../components/common/PageLoader.jsx';
-import { CrudPage } from '../../features/crud/CrudPage.jsx';
-import { entityConfigs } from '../../features/crud/entityConfigs.js';
-import { HashRouter } from 'react-router-dom';
+import { lazy, Suspense } from "react";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { AdminLayout } from "../../layouts/AdminLayout.jsx";
+import { AuthLayout } from "../../layouts/AuthLayout.jsx";
+import { ProtectedRoute } from "./ProtectedRoute.jsx";
+import { PageLoader } from "../../components/common/PageLoader.jsx";
+import { CrudPage } from "../../features/crud/CrudPage.jsx";
+import { entityConfigs } from "../../features/crud/entityConfigs.js";
+import { HashRouter } from "react-router-dom";
 
-const DashboardPage = lazy(() => import('../../features/dashboard/DashboardPage.jsx'));
-const LoginPage = lazy(() => import('../../features/auth/LoginPage.jsx'));
-const RegisterPage = lazy(() => import('../../features/auth/RegisterPage.jsx'));
-const ForgotPasswordPage = lazy(() => import('../../features/auth/ForgotPasswordPage.jsx'));
-const ResetPasswordPage = lazy(() => import('../../features/auth/ResetPasswordPage.jsx'));
-const SettingsPage = lazy(() => import('../../features/settings/SettingsPage.jsx'));
-const ReportsPage = lazy(() => import('../../features/reports/ReportsPage.jsx'));
+const DashboardPage = lazy(
+  () => import("../../features/dashboard/DashboardPage.jsx"),
+);
+const LoginPage = lazy(() => import("../../features/auth/LoginPage.jsx"));
+const RegisterPage = lazy(() => import("../../features/auth/RegisterPage.jsx"));
+const ForgotPasswordPage = lazy(
+  () => import("../../features/auth/ForgotPasswordPage.jsx"),
+);
+const ResetPasswordPage = lazy(
+  () => import("../../features/auth/ResetPasswordPage.jsx"),
+);
+const SettingsPage = lazy(
+  () => import("../../features/settings/SettingsPage.jsx"),
+);
+const ReportsPage = lazy(
+  () => import("../../features/reports/ReportsPage.jsx"),
+);
 
 export function AppRouter() {
   return (
@@ -34,7 +44,11 @@ export function AppRouter() {
               <Route path="reports" element={<ReportsPage />} />
               <Route path="settings" element={<SettingsPage />} />
               {entityConfigs.map((config) => (
-                <Route key={config.slug} path={config.slug} element={<CrudPage config={config} />} />
+                <Route
+                  key={config.slug}
+                  path={config.slug}
+                  element={<CrudPage config={config} />}
+                />
               ))}
             </Route>
           </Route>
