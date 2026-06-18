@@ -8,6 +8,7 @@ const images = [
   "IMG_5049.JPG", "IMG_5349.JPG", "IMG_5715.JPG", "IMG_5855.JPG",
   "IMG_6786.JPG", "IMG_7110.JPG", "IMG_7137.JPG", "IMG_7572.JPG",
   "IMG_7678.JPG", "IMG_7824.JPG", "IMG_7894.JPG", "IMG_7901.JPG",
+  "image.png",
 ];
 
 // Resolves to "/alumni-admin-system/images/IMG_xxx.JPG" automatically
